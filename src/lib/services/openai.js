@@ -12,7 +12,7 @@ const configuration = new Configuration({
 
 const ai = new OpenAIApi(configuration);
 
-const ask = async (prompt = '', options = { model: 'gpt-3.5-turbo' }) => {
+const petition = async (prompt = '', options = { model: 'gpt-3.5-turbo' }) => {
 	if (!prompt) return;
 
 	const response = await ai.createChatCompletion({
@@ -31,4 +31,4 @@ const ask = async (prompt = '', options = { model: 'gpt-3.5-turbo' }) => {
 	return response;
 };
 
-export default { ask };
+export default { petition };

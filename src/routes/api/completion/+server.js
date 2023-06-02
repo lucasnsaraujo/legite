@@ -7,7 +7,7 @@ export async function POST({ request, cookies }) {
 	if (!prompt) throw error(400, 'must have a prompt');
 
 	try {
-		const answer = await ai.ask(prompt);
+		const answer = await ai.petition(prompt);
 
 		const content = answer.data.choices[0].message.content;
 
@@ -19,6 +19,6 @@ export async function POST({ request, cookies }) {
 
 		return json(response);
 	} catch (error) {
-		console.log(error);
+		return json({ ok: false, message: 'An error has occurred.' });
 	}
 }

@@ -3,7 +3,6 @@
 	import Header from '$lib/components/Header.svelte'
 
 	export let data;
-	console.log(data)
 </script>
 
 {#if data.shouldRenderHeader}
